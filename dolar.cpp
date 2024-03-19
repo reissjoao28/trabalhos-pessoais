@@ -1,23 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 
     int main(void)
     	
     {
-        int cotacao, valor, real;
+        float cotacao, valor, real;
+        char r;
         
-        printf("Conversao de dolar para real:\n ");
+        do
+        {
+		
+        
+        printf("Conversao de dolar para real!\n ");
 
             printf("Digite a cotacao do dolar:\n ");
-            scanf("%d", &cotacao);
+            scanf("%f", &cotacao);
 
             printf("Digite o valor em reais:\n ");
-            scanf("%d", &real);
+            scanf("%f", &real);
 
             valor = real * cotacao;
             
-            printf("Quantia em reais: R$%d\n\n", valor);
+            printf("Quantia em reais: R$%f\n\n", valor);
             
+            printf("Deseja fazer outra conversao? (s/n):\n ");
+            scanf(" %c", &r);
+            printf("\n");
+            
+            while ((getchar()) != '\n');
+        }
+        	while(r == 's' || r == 'S');
             system ("pause");
             return 0;
     }
